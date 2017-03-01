@@ -1,0 +1,28 @@
+@import 'animate';
+.bg {height:100%;background-color:gray;}
+.list-item {
+	&:extend(.f0,.oh);height:100%;width:100%;
+	&>li {
+		&:extend(.dib,.vt);width:30%;margin-left:2.5%;height:100%;background-color:yellow;transition: all .3 linear;
+	}
+}
+.list-photo {
+	height:100%;
+	li {
+		&:extend(.fadeInRight,.animated);
+		height: 12%;margin-top:4.8%;background-color:red;
+	}
+	li:nth-child(1) {animation-delay: .3s;}
+	li:nth-child(2) {animation-delay: .3s*2;}
+	li:nth-child(3) {animation-delay: .3s*3;}
+	li:nth-child(4) {animation-delay: .3s*4;}
+	li:nth-child(5) {animation-delay: .3s*5;}
+	li:nth-child(6) {animation-delay: .3s*6;}
+	li:nth-child(7) {animation-delay: .3s*7;}
+}
+.leftImg {
+	&:extend(.fl);
+}
+.cont {
+	&:extend(.oh,.f14);padding-left:10px;
+}
