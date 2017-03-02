@@ -1,5 +1,14 @@
 @import 'animate';
-.bg {height:100%;background-color:gray;}
+html,body {&:extend(.oh);}
+.bg1 {background-color:gray;}
+.bg2 {background-color:blue;}
+.bg3 {background-color:green;}
+.bg4 {background-color:yellow;}
+.bg5 {background-color:red;}
+.bg6 {background-color:rgba(0,0,0,.3);}
+.bg7 {background-color:rgba(0,0,0,.6);}
+.bg8 {background-color:rgba(0,0,0,.9);}
+/*
 .list-item {
 	&:extend(.f0,.oh);height:100%;width:100%;
 	&>li {
@@ -26,3 +35,64 @@
 .cont {
 	&:extend(.oh,.f14);padding-left:10px;
 }
+*/
+.boxDom {
+        width:100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .idDom {
+        width: 100%;
+        height: 60px;
+        background: #666;
+        position: fixed;
+        bottom: 0px;
+    }
+    .content {
+        display: inline-block;
+        width:430px;
+        height: 40px;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top:0px;
+        bottom:0px;
+        margin:auto;
+    }
+    .title {
+        display: inline;
+        font-size: 4em;
+        vertical-align:bottom;
+        color:#fff;
+    }
+    .text {
+        border:none;
+        width:300px;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 2.4em;
+    }
+.string {	
+	height: 80px;
+	position: absolute;
+	right: 0;
+	overflow: hidden;
+	color:#000;
+	font-size: 4em;
+	line-height: 1.5;
+	//cursor: pointer;
+	white-space:nowrap;
+	transform: translateX(1800px);
+	//transition: all 5s linear;	
+}
+.strTrans {animation: strTrans 8s linear;}
+@keyframes strTrans {
+	from {
+		transform: translateX(1800px);	
+	}
+	to {
+		transform: translateX(-1400px);
+	}
+}
+

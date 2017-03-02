@@ -11,6 +11,13 @@ const apiUtil = require('../util/apiUtil');
 const jsonFormat = require('../util/jsonFormat');
 const upload = require('../util/upload');
 
+router.get(`/nikeapi`, (req, res, next) => {
+	const count = req.query.count;
+	request(`http://waliwang.com/rg/nikeapi/getMessageList?limitCount=${count}`, (err, response, body) => {
+		res.send(body);
+	}) 
+});
+
 router.post('/login', (req, res, next) => {
 	req.method = 'POST';
 	req.url = '/API_URL/login';
