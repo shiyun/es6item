@@ -3,12 +3,12 @@
 const apiUrl = `http://waliwang.com/rg/nikeapi/getMessageList?limitCount=5`;
 const _url = `/api/nikeapi`;
 
-const bgArr = ['bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6', 'bg7', 'bg8','bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6', 'bg7', 'bg8','bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6', 'bg7', 'bg8',];
+const bgArr = ['bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6', 'bg7', 'bg8','bg9','bg10','bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6', 'bg7', 'bg8','bg9','bg10',];
 
 const pageW=parseInt($(document).width());
 const pageH=parseInt($(document).height());
 const boxDom=$("#boxDom");
-let  Top,Right, width, index = 0;
+let Top,Right, width, index = 0, n = 0;
 width=pageW;
 let colorArr=["#cfaf12","#12af01","#981234","#adefsa","#db6be4","#f5264c","#d34a74"];
 
@@ -24,7 +24,8 @@ function auto(text, k){
     //creSpan.css({"top":Top, "color":getRandomColor()});
     //boxDom.append(creSpan);
     let spanDom=$("#boxDom>span:eq("+k+")");
-    spanDom.css({"top":Top, "color":getRandomColor()}).text(text).addClass('strTrans').on('webkitAnimationEnd', () => {
+    //spanDom.css({"top":Top, "color":getRandomColor()}).text(text).addClass('strTrans').on('webkitAnimationEnd', () => {
+    spanDom.css({"top":Top}).text(text).addClass('strTrans').on('webkitAnimationEnd', () => {
 	   	spanDom.removeClass('strTrans');
 	});
 
@@ -71,8 +72,9 @@ setInterval(() => {
 }, 5000);
 
 setInterval(() => {
-	$('body').removeClass().addClass(bgArr[index]);
-}, 10000)
+	$('body').removeClass().addClass(bgArr[n]);
+	n = n++ == 19 ? 0 : n;
+}, 5000)
 
 
 /* 手风琴效果
