@@ -45,16 +45,16 @@ function getRandomColor(){
 setInterval(() => {
 	$.ajax({
 	    type: 'GET',
-	    url: _url,
+	    url: apiUrl,
 	    dataType: "json",
 	    success: res => {
 	    	if(res.code == '1'){
-	    		let data = res.data.mgslist, time = 0, t;
+	    		let data = res.data.msglist, time = 0, t;
 		    	if(Array.isArray(data)){
 			    	data.map((v, k) => {
 			    		time += 2000;
 			    		t = setTimeout(() => {
-			    			auto(v.content, index)
+			    			auto(v, index)
 							index = index++ == 20 ? 0 : index;
 			    		}, time);    		
 			    		if(k === data.length - 1){
