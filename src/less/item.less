@@ -1,5 +1,6 @@
 @import 'animate';
 html,body {&:extend(.oh);}
+body {background: rgba(0,0,0,.3);}
 .wrap {&:extend(.pr);z-index:99;}
 .bgImg {
     opacity:0; position: fixed;z-index:1;top:0;right:0;bottom:0;left:0;background: url('../images/item/1.jpg') center no-repeat / cover;
@@ -14,7 +15,7 @@ html,body {&:extend(.oh);}
 .bg8 {background-image: url('../images/item/8.jpg');}
 .bg9 {background-image: url('../images/item/9.jpg');}
 .bg10 {background-image: url('../images/item/10.jpg');}
-.opa {opacity: 0;animation:opa .6s linear forwards;}
+.opa {opacity: 0;animation:opa 1.4s linear forwards;}
 @keyframes opa {
     from {
         opacity: 0; 
@@ -91,7 +92,7 @@ html,body {&:extend(.oh);}
     }
 .string {	
     &:extend(.cwhite);
-	height: 80px;
+	height: 70px;
 	position: absolute;
 	right: 0;
 	overflow: hidden;
@@ -99,16 +100,16 @@ html,body {&:extend(.oh);}
 	line-height: 1.5;
 	//cursor: pointer;
 	white-space:nowrap;
-	transform: translateX(1800px);
+	transform: translateX(2200px);
 	//transition: all 10s linear;	
 }
-.strTrans {animation: strTrans 8s linear;}
+.strTrans {animation: strTrans 15s linear;}
 @keyframes strTrans {
 	from {
-		transform: translateX(1800px);	
+		transform: translateX(2200px);	
 	}
 	to {
-		transform: translateX(-1200px);
+		transform: translateX(-2200px);
 	}
 }
 
