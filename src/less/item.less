@@ -1,15 +1,28 @@
 @import 'animate';
 html,body {&:extend(.oh);}
-.bg1 {background: url('../images/item/1.jpg') center no-repeat / cover;}
-.bg2 {background: url('../images/item/2.jpg') center no-repeat / cover;}
-.bg3 {background: url('../images/item/3.jpg') center no-repeat / cover;}
-.bg4 {background: url('../images/item/4.jpg') center no-repeat / cover;}
-.bg5 {background: url('../images/item/5.jpg') center no-repeat / cover;}
-.bg6 {background: url('../images/item/6.jpg') center no-repeat / cover;}
-.bg7 {background: url('../images/item/7.jpg') center no-repeat / cover;}
-.bg8 {background: url('../images/item/8.jpg') center no-repeat / cover;}
-.bg9 {background: url('../images/item/9.jpg') center no-repeat / cover;}
-.bg10 {background: url('../images/item/10.jpg') center no-repeat / cover;}
+.wrap {&:extend(.pr);z-index:99;}
+.bgImg {
+    opacity:0; position: fixed;z-index:1;top:0;right:0;bottom:0;left:0;background: url('../images/item/1.jpg') center no-repeat / cover;
+}
+.bg1 {background-image: url('../images/item/1.jpg');}
+.bg2 {background-image: url('../images/item/2.jpg');}
+.bg3 {background-image: url('../images/item/3.jpg');}
+.bg4 {background-image: url('../images/item/4.jpg');}
+.bg5 {background-image: url('../images/item/5.jpg');}
+.bg6 {background-image: url('../images/item/6.jpg');}
+.bg7 {background-image: url('../images/item/7.jpg');}
+.bg8 {background-image: url('../images/item/8.jpg');}
+.bg9 {background-image: url('../images/item/9.jpg');}
+.bg10 {background-image: url('../images/item/10.jpg');}
+.opa {opacity: 0;animation:opa .6s linear forwards;}
+@keyframes opa {
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /*
 .list-item {
@@ -87,7 +100,7 @@ html,body {&:extend(.oh);}
 	//cursor: pointer;
 	white-space:nowrap;
 	transform: translateX(1800px);
-	//transition: all 5s linear;	
+	//transition: all 10s linear;	
 }
 .strTrans {animation: strTrans 8s linear;}
 @keyframes strTrans {
@@ -95,7 +108,7 @@ html,body {&:extend(.oh);}
 		transform: translateX(1800px);	
 	}
 	to {
-		transform: translateX(-1400px);
+		transform: translateX(-1200px);
 	}
 }
 

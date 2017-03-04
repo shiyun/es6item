@@ -3,22 +3,29 @@
 const apiUrl = `http://waliwang.com/rg/nikeapi/getMessageList?limitCount=5`;
 const _url = `/api/nikeapi`;
 
-const bgArr = ['bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6', 'bg7', 'bg8','bg9','bg10','bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6', 'bg7', 'bg8','bg9','bg10',];
+const bgArr = ['1', '2', '3', '4', '5', '6', '7', '8','9','10','1', '2', '3', '4', '5', '6', '7', '8','9','10',];
 
 const pageW=parseInt($(document).width());
 const pageH=parseInt($(document).height());
 const boxDom=$("#boxDom");
-let Top,Right, width, index = 0, n = 0;
+let Top,Right, width, index = 0, n = 0, hn = parseInt(pageH / 80), tmpn = 0;
 width=pageW;
 let colorArr=["#cfaf12","#12af01","#981234","#adefsa","#db6be4","#f5264c","#d34a74"];
 
 function auto(text, k){
     //let creSpan=$("<span class='string'></span>");
     //creSpan.text(text);
-    Top=parseInt(pageH*(Math.random()));
+    let n = parseInt(Math.random()*hn);
+    if(tmpn != n){
+    	tmpn = n;
+    }else{
+    	tmpn = parseInt(Math.random()*hn) == n ? parseInt(Math.random()*hn) : 1;
+    }
+
+    Top = 80 * tmpn;
     let num=parseInt(colorArr.length*(Math.random()));
     if(Top>pageH-300){
-        Top=pageH-300;
+        //Top=pageH-300;
     }
     //creSpan.css({"top":Top,"right":-300,"color":getRandomColor()});
     //creSpan.css({"top":Top, "color":getRandomColor()});
@@ -72,8 +79,9 @@ setInterval(() => {
 }, 5000);
 
 setInterval(() => {
-	$('body').removeClass().addClass(bgArr[n]);
 	n = n++ == 19 ? 0 : n;
+	$('.bgImg').removeClass('opa');
+	$(`.bg${bgArr[n]}`).addClass('opa');
 }, 5000)
 
 
