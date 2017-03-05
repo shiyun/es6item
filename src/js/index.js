@@ -1,6 +1,6 @@
 'use strict';
 
-const apiUrl = `http://waliwang.com/rg/nikeapi/getMessageList?limitCount=5`;
+const apiUrl = `http://prod.waliwang.com/rg/nikeapi/getMessageList?limitCount=5`;
 const _url = `/api/nikeapi`;
 
 const bgArr = ['1', '2', '3', '4', '5', '6', '7', '8','9','10','1', '2', '3', '4', '5', '6', '7', '8','9','10',];
@@ -11,14 +11,19 @@ const boxDom=$("#boxDom");
 let Top,Right, width=pageW, index = 0, n = 0, hn = parseInt(pageH / 70), auton = 1;
 let colorArr=["#cfaf12","#12af01","#981234","#adefsa","#db6be4","#f5264c","#d34a74"];
 
-let arr1 = [], arr2 = [];
-for(let i=0; i<hn; i++){
+let arr1 = [1, 3], arr2 = [0, 2, 4];
+/*
+ *按照屏幕高度计算
+ *
+ let arr1 = [], arr2 = [];
+ for(let i=0; i<hn; i++){
 	if(i%2 == 0){
 		arr1.push(i);
 	}else{
 		arr2.push(i);
 	}
 }
+*/
 //console.log(`arr1: ${arr1}`)
 //console.log(`arr2: ${arr2}`)
 //arr1 = arr1.sort((a,b) => Math.random()-0.5);
@@ -49,9 +54,9 @@ function auto(text, k){
     	//tmp2 = n;
     	//n = tmpcur == tmp2 ? arr2[parseInt(Math.random()*arr2.length)] : tmp2;
     }
-    console.log(`n: ${n}`)
+    //console.log(`n: ${n}`)
     auton ++;
-    Top = 70 * n;
+    Top = 70 * n + parseInt(boxDom.offset().top);
     //let num=parseInt(colorArr.length*(Math.random()));
     /*if(Top>pageH-300){
         Top=pageH-300;
